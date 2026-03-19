@@ -9,11 +9,11 @@ import { getStartKeyboard, getNotifyKeyboard } from './keyboards/allKeyboards.js
 import { User } from './models/User.js';
 import { editMessage, notifyNewProduct, notifyDiscount } from './utils/index.js';
 
-const BOT_API = process.env.BOT_API;
-if (!BOT_API) {
+const BOT_TOKEN = process.env.BOT_TOKEN;
+if (!BOT_TOKEN) {
     throw new Error('❌ BOT_API_KEY is not defined');
 }
-const bot = new Bot<MyContext>(BOT_API);
+const bot = new Bot<MyContext>(BOT_TOKEN);
 bot.use(hydrate());
 
 bot.api.setMyCommands([
